@@ -4,13 +4,12 @@
 int Horner(int* e, int k, int n, int* eh){
     int eredmeny = e[n];
     int i;
-    for (i = n-1; i > 0; i--)
+    for (i = n-1; i >= 0; i--)
     {
         eh[n-i-1] = eredmeny;
         eredmeny = k * eredmeny + e[i];
     }
-    eh[n-i-1] = eredmeny;
-    return k * eredmeny + e[0]; 
+    return eredmeny; 
 }
 void kiir(int kszi, int h, int* x, int n){
 std::cout << "f(" << kszi << ") = " << h << " és" << std::endl 
